@@ -8,7 +8,7 @@ interface IModal {
   providedIn: 'root', //root allows us to inject the modal service into other components
 })
 export class ModalService {
-  public modals: IModal[] =[]; //this is an array of modals
+  private modals: IModal[] =[]; //this is an array of modals
 
   constructor() {}
 
