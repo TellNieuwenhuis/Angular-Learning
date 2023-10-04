@@ -17,6 +17,10 @@ export class ModalService {
     // console.log(this.modals);
   }
 
+  unregister(id: string){
+    this.modals = this.modals.filter(element => element.id!== id); //if the id is found, remove it from the array
+  }
+
   // check if the modal is visible
   isModalOpen(id: string): boolean {
     // can also add  boolean function
