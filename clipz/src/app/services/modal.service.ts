@@ -19,14 +19,15 @@ export class ModalService {
 
   // check if the modal is visible
   isModalOpen(id: string): boolean {
-    // can also add double negation operator !! infront of this.modals instead of wraping with boolean function
-    // !!return this.modals.find(element => element.id === id)?.visible;
-    Boolean(this.modals.find(element => element.id === id)?.visible)
+    // can also add  boolean function
+    // Boolean(this.modals.find(element => element.id === id)?.visible)
+    return !!this.modals.find(element => element.id === id)?.visible
   }
 
   // toggles the visibility of the modal
   toggleModal(id: string) {
-    const modal = this.modals.find(element => element.id === id)
+    console.log(`Toggling modal with id: ${id}`);
+    const modal = this.modals.find(element => element.id === id);
 
     if (modal) {
       modal.visible =!modal.visible;
