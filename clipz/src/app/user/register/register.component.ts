@@ -12,14 +12,14 @@ export class RegisterComponent {
   ]);
 
   email = new FormControl('', [
-    Validators.required, 
+    Validators.required,
     Validators.email
   ]);
 
   age = new FormControl('', [
     Validators.required,
     Validators.min(18),
-    Validators.max(120),
+    Validators.max(120)
   ]);
 
   password = new FormControl('', [
