@@ -1,25 +1,42 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
+  name = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3)
+  ]);
 
-  name= new FormControl('',
-    [Validators.required, 
-    Validators.minLength(3)])
+  email = new FormControl('', [
+    Validators.required, 
+    Validators.email
+  ]);
 
-    email= new FormControl('')
+  age = new FormControl('', [
+    Validators.required,
+    Validators.min(18),
+    Validators.max(120),
+  ]);
 
-    age= new FormControl('')
+  password = new FormControl('', [
+    Validators.required,
+    Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm),
+  ]);
 
-    password= new FormControl('')
-    
-    confirmPassword= new FormControl('')
-    
-    phoneNumber= new FormControl('')
+  confirmPassword = new FormControl('', [
+    Validators.required,
+    // Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm)
+  ]);
+
+  phoneNumber = new FormControl('',[
+    Validators.required,
+    Validators.minLength(13),
+    Validators.maxLength(13)
+  ]);
 
   registerForm = new FormGroup({
     name: this.name,
@@ -27,8 +44,6 @@ export class RegisterComponent {
     age: this.age,
     password: this.password,
     confirmPassword: this.confirmPassword,
-    phoneNumber: this.phoneNumber
-    
-  })
-
+    phoneNumber: this.phoneNumber,
+  });
 }
