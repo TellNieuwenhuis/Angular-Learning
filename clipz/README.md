@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## known issues
+masking is preventing age field inputs. 
+<!-- Todo shared module input may need chaged to NgxMaskModule.forRoot() instead of NgxMaskDirective -->
+
+input.html 
+<!-- TODO add  [mask]="format ? format: null" [dropSpecialCharacters]="false"  behind blace holder to implement masking
+TODO figure out why masking is preventing age field from allowing input. -->
