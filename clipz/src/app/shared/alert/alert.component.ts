@@ -13,5 +13,7 @@ export class AlertComponent implements OnInit {
   }
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.bgColor());
+  }
 }

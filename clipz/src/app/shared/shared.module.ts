@@ -7,30 +7,34 @@ import { TabsContainerComponent } from './tabs-container/tabs-container.componen
 import { InputComponent } from './input/input.component';
 import { provideEnvironmentNgxMask, NgxMaskDirective } from 'ngx-mask';
 import { AlertComponent } from './alert/alert.component';
+import { MaskedInputComponent } from './masked-input/masked-input.component';
 //import { ModalService } from '../services/modal.service';
 
 
 
 @NgModule({
   declarations: [
+    MaskedInputComponent,
     ModalComponent,
     TabComponent,
     TabsContainerComponent,
     InputComponent,
-    AlertComponent
+    AlertComponent,
+    
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     NgxMaskDirective
-    // todo look at vid 117 and before shows NgxMaskModule.forRoot() instead of NgxMaskDirective so he changed something. 
   ],
   exports: [
+    MaskedInputComponent,
     ModalComponent,
     TabsContainerComponent,
     TabComponent,
     InputComponent,
-    AlertComponent
+    AlertComponent,
+    
   ],
   providers: [provideEnvironmentNgxMask()],
   //providers: [ModalService]
