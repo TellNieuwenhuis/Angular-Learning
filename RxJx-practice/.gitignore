@@ -1,2 +1,4 @@
 node_modules/
 
+# Ignore map files
+*.map
