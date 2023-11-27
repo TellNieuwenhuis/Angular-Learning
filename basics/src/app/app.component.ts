@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   name = 'Tell';
   title = 'basics';
-  imgURL = 'https://fastly.picsum.photos/id/237/500/500.jpg?hmac=idOEkrJhLd7nEU5pNrAGCyJ6HHJdR_sit1qDt5J3Wo0'
+  imgURL = 'https://picsum.photos/id/685/500/500'
 
   getName(){
     return this.name;
