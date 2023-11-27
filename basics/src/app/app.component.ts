@@ -8,9 +8,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']  
 })
 export class AppComponent {
-  name = 'Tell';
+  name = 'tell nieuwenhuis';
   title = 'basics';
   imgURL = 'https://picsum.photos/id/685/500/500'
+  imgURL = 'https://picsum.photos/id/685/500/500'
+  images = [
+    'https://picsum.photos/id/685/500/500',
+    'https://picsum.photos/id/686/500/500',
+    'https://picsum.photos/id/687/500/500',
+    'https://picsum.photos/id/688/500/500',
+  ]
+  currentDate = new Date();
+  cost = 2000
+  temperature = 25.3
+  pizza = {
+    toppings: ['pepperoni','mushrooms', 'onions', 'olives'],
+    size: 'large'
+  }
+
+  blueClass = false
+
+  fontSize = 16
 
   getName(){
     return this.name;

@@ -1,3 +1,20 @@
+<!--Angular will not display the contents of this elemnt in the browser. Its stored in memory as a variable-->
+<!--the ngIf statment makes it so that if the button is blue the message will appear saying the Button is blue-->
+        <!-- <ng-template [ngIf]="blueClass">
+            <p>Button is blue.</p>
+        </ng-template> -->
+
+<!--another way of doing the above code. it is a shorthand way to write a structural directive like above.-->
+<p *ngIf="blueClass">Button is blue.</p>
+
+<!--using an ngClass directive to creates a blue togle on the button when clicked
+    and changes the text to white. Look at app.component.scss-->
+    <!--ngStyle used to adjust the font size. look at app.components.ts for fontSize. 
+        the .px is appending the measurment to the css font-size-->
+<button (click)="blueClass = !blueClass" [ngClass]="{blue: blueClass}" [ngStyle]="{'font-size.px': fontSize }">Change</button>
+
+<hr>
+
 <input (keyup)="changeImage($event)" [value]="imgURL">
 
 <app-post [Img]="imgURL" (imgSelected)="logImg($event)">
@@ -6,4 +23,19 @@
 
 <p>{{name.toUpperCase()}}</p>
 <p>{{getName()}}</p>
+
 <p>{{15+13}}</p>
+
+<!--setting date format with a pipe.-->
+<p>{{currentDate | date: 'short'}}</p> 
+
+<!--setting cost currency format with a pipe with a value for Yen instead of dollar
+    it does not convert the value just adds the symbole.-->
+<p>{{cost | currency: 'JPY'}}</p> 
+
+<!-- using just number will put out the number without any formating.-->
+<!--the first 0 sets the min and the second 0 sets the max number of digits. this is converting 25.3 to 25-->
+<p>{{temperature | number: '1.0-0'}}</p> 
+
+<!-- this jason pipe is only used for debuging nothing else-->
+<pre>{{pizza | json}}</pre>
